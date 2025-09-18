@@ -59,6 +59,7 @@ import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import { Link } from 'react-router';
 import Cart from './Cart';
 
+
 const Navbar = () => {
   const [showCart, setShowCart] = useState(false);
   const cartRef = useRef(null);
