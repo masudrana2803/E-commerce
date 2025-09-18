@@ -87,7 +87,7 @@ const Navbar = () => {
           <div className='flex justify-between'>
             <div>
               <a href="./">
-                <img src="/src/Images/Nexton_Logo.png" alt="Logo" />
+                <img src="../Images/Nexton_Logo.png" alt="Logo" />
               </a>
             </div>
 
