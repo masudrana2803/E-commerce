@@ -4,6 +4,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { Link } from 'react-router';
 import Home from '../Pages/Home';
+import Cart from './Cart';
 
 
 const Navbar = () => {
@@ -33,9 +34,9 @@ const Navbar = () => {
             </div>
         </div>
         </div>
-        
-        
       </nav>
+      <Cart/>
+      
     </>
   )
 }
