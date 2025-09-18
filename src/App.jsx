@@ -7,6 +7,7 @@ import LayoutOne from './Layouts/LayoutOne'
 const App = () => {
   const myRoute = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element = {<LayoutOne/>}>
+    <Route path='/Home' element={<Home/>}/>
 
     </Route>
   ))
