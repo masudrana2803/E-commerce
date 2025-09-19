@@ -8,10 +8,10 @@ const Brandtool = ({content1,content2,content3}) => {
                 <img src={content1} alt="" />
             </div>
             <div>
-                <h2>
-                </h2>
+                <h2 className='text-[18px] font-poppins font-600 ' >
                     {content2}
-                <h2>
+                </h2>
+                <h2 className=' text-[14px] font-poppins font-400 text-spandy '>
                     {content3}
                 </h2>
             </div>
