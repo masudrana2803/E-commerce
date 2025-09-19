@@ -56,6 +56,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
+import logo from "../Images/Nexton_Logo.png"
 import { Link } from 'react-router';
 import Cart from './Cart';
 
@@ -88,7 +89,7 @@ const Navbar = () => {
           <div className='flex justify-between'>
             <div>
               <a href="./">
-                <img src="/src/Images/Nexton_Logo.png" alt="Logo" />
+                <img src={logo} alt="Logo" />
               </a>
             </div>
 
