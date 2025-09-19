@@ -14,27 +14,29 @@ const Hero = () => {
   };
   return (
     <>
-    <div className="slider-container">
+    <div className="container">
+
+    <div className="slider-container banner_slider">
       <Slider {...settings}>
         <div>
-          <h3>1</h3>
+          <h3>
+            <a href="#"><img src={hero} alt="Hero_Banner" /></a>
+          </h3>
         </div>
         <div>
-          <h3>2</h3>
+          <h3>
+            <a href="#"><img src={hero} alt="Hero_Banner" /></a>
+          </h3>
         </div>
         <div>
-          <h3>3</h3>
+          <h3>
+            <a href="#"><img src={hero} alt="Hero_Banner" /></a>
+          </h3>
         </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+
+
       </Slider>
+    </div>
     </div>
     </>
   )

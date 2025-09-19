@@ -1,4 +1,5 @@
 import React from 'react'
+import './App.css'
 import Home from './Pages/Home'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
 import LayoutOne from './Layouts/LayoutOne'
