@@ -26,14 +26,20 @@ const Hero = () => {
         </div>
         <div>
           <h3>
-            <a href="#"><img src={hero} alt="Hero_Banner" /></a>
+            <a href="#"><img src={hero} alt="Hero_Banner" className='w-full overflow-hidden' /></a>
           </h3>
         </div>
         <div>
           <h3>
-            <a href="#"><img src={hero} alt="Hero_Banner" /></a>
+            <a href="#"><img src={hero} alt="Hero_Banner" className='w-full overflow-hidden' /></a>
           </h3>
         </div>
+        <div>
+          <h3>
+            <a href="#"><img src={hero} alt="Hero_Banner" className='w-full overflow-hidden' /></a>
+          </h3>
+        </div>
+
 
 
       </Slider>
