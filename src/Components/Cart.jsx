@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 const Cart = () => {
   return (
     <>
-      <div className='w-[340px] h-[550px] bg-amber-100 absolute top-15 right-0 mr-[20px]'>
+      <div className='w-[340px] h-[550px] bg-amber-100 absolute top-15 right-0 mr-[20px] absolute'>
 <h2 className='text-center font-bold'>Cart</h2>
 {/* Products and prices */}
 <div className='bg-none py-2 h-[450px] overflow-y-scroll p-4'>

@@ -14,13 +14,14 @@ const Hero = () => {
   };
   return (
     <>
-    <div className="container">
+    <section>
+
 
     <div className="slider-container banner_slider">
       <Slider {...settings}>
         <div>
           <h3>
-            <a href="#"><img src={hero} alt="Hero_Banner" /></a>
+            <a href="#"><img src={hero} alt="Hero_Banner" className='w-full overflow-hidden' /></a>
           </h3>
         </div>
         <div>
@@ -37,7 +38,9 @@ const Hero = () => {
 
       </Slider>
     </div>
-    </div>
+
+
+    </section>
     </>
   )
 }
