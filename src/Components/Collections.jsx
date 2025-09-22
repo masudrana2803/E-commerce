@@ -18,7 +18,7 @@ function Collections() {
         <div className="container">
 
     <div className="slider-container collection_slider">
-        <div className='mb-10'>
+        <div className='mb-15'>
         <CommonHead content1={"Start exploring. "} content2={"Good things are waiting for you"}/>
 
         </div>
@@ -36,7 +36,7 @@ function Collections() {
           <CollectionCard content1={"For Men's"} content2={"Starting at $24"}/>
         </div>
         <div>
-          <CollectionCard content1={"For Men's"} content2={"Starting price at $24"}/>
+          <CollectionCard content1={"For Women's"} content2={"Starting price at $24"}/>
         </div>
         <div>
           <CollectionCard content1={"For Men's"} content2={"Starting at $24"}/>
