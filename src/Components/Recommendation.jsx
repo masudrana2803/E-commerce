@@ -10,8 +10,19 @@ const Recommendation = () => {
         <div className='RecommendationCards w-[309px] h-[347px] content-center relative'>
             <img src="/src/Images/Product27.png" alt="Product27" />
         <div className='absolute right-5 top-5'>Cart</div>
+        <div  className='flex justify-between '>
+                <div>
+                    <h2>Description</h2>
+                    <h2>Price</h2>
+                    <h3>Rating</h3>
+                </div>
+                <div>
+                    <h2>Description</h2>
+                    <h2>Price</h2>
+                    <h3>Rating</h3>
+                </div>
         </div>
-
+        </div>
         </div>
 
         </div>
