@@ -57,5 +57,26 @@ background-color: black;
 .collection_slider .slick-dots li.slick-active button{
 background-color: black;
 }
+/* RecommendSlider */
+.RecommendSlider .slick-dots{
+    display: flex !important;
+    color: red;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    gap: 5px;
+}
+
+.RecommendSlider .slick-dots li button{
+    font-size: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.RecommendSlider .slick-dots li.slick-active button{
+background-color: black;
+}
 
 

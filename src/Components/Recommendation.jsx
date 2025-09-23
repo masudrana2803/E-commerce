@@ -2,13 +2,15 @@ import React from 'react'
 import CommonHead from '../Tools/CommonHead'
 import Slider from 'react-slick';
 import RecommedationItem from '../Tools/RecommedationItem';
-
+import Ritems from '../Images/Product27.png'
+import axios from 'axios';
 
 
 
 
 
 const Recommendation = () => {
+
     
       const settings = {
     arrows:false,
@@ -20,6 +22,11 @@ const Recommendation = () => {
   };
 
 
+  
+        axios.get('https://dummyjson.com/products')
+        .then((res)=>{console.log(res)})
+        .catch((err)=>{console.log(err)})
+
 
   return (
     <>
@@ -30,20 +37,11 @@ const Recommendation = () => {
             <div className="RecommendSlider mb-20">
                 <Slider {...settings}>
                         <div>
-                            <RecommedationItem  content1={"/src/Images/Product27.png"}/>
+                            <RecommedationItem  content1={Ritems} content2={"Description"} content3={"Category"} content4={"Counter"}
+                            content5={"Review"} content6={"Discount Price"} content7={"Price"} />
                         </div>
-                        <div>
-                            <RecommedationItem/>
-                        </div>
-                        <div>
-                            <RecommedationItem/>
-                        </div>
-                        <div>
-                            <RecommedationItem/>
-                        </div>
-                        <div>
-                            <RecommedationItem/>
-                        </div>
+                        
+
                         
                 </Slider>
 
