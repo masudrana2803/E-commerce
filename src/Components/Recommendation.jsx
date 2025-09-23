@@ -11,7 +11,16 @@ import axios from 'axios';
 
 const Recommendation = () => {
 
-    
+      const settings = {
+    arrows:false,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4
+  };
+
+// Most Important parts in API integration
 
         const [Allproducts,setAllproducts] = useState([])
 
@@ -22,10 +31,12 @@ const Recommendation = () => {
           .then((res)=>{setAllproducts(res.data.products)})
   
           .catch((err)=>{console.log(err)})
-          console.log(Allproducts)
           
         },[])
-  
+        
+        console.log(Allproducts)
+// Most Important parts in API integration
+
 
   return (
     <>
@@ -33,21 +44,21 @@ const Recommendation = () => {
             <div className=' mb-8.5'>
                 <CommonHead content1={"Recommendations. "} content2={"Best matching products for you"} />
             </div>
-              <div className='flex flex-wrap gap-4'>
+
+               <Slider {...settings} className='RecommendSlider'>
+                
                 {
                   Allproducts.map((item)=>(
+                    <RecommendationItem key={item.id} productImage={item.thumbnail} Description={item.description} 
+                    Category={item.category} Rating={item.rating} Review={item.stock} DiscountPrice={""} Price={item.price}
 
-                    <RecommendationItem/>
-
+                    />
+                    
                   )
-                  )
+                )
+              }
 
-                }
-                  <div>
-                    {/* <RecommendationItem  content1={Ritems} content2={"Description"} content3={"Category"} content4={"Counter"}
-                    content5={"Review"} content6={"Discount Price"} content7={"Price"} /> */}
-                  </div>
-              </div>
+              </Slider>
         </div>
     </>
   )
