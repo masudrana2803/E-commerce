@@ -1,30 +1,53 @@
 import React from 'react'
 import CommonHead from '../Tools/CommonHead'
+import Slider from 'react-slick';
+import RecommedationItem from '../Tools/RecommedationItem';
+
+
+
+
+
 
 const Recommendation = () => {
+    
+      const settings = {
+    arrows:false,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1
+  };
+
+
+
   return (
     <>
-        <div className="conatiner p-22 bg-red-100 ">
-        <CommonHead content1={"Recommendations. "} content2={"Best matching products for you"} />
-        <div className='flex justify-between flex-wrap  '>
-        <div className='RecommendationCards w-[309px] h-[347px] content-center relative'>
-            <img src="/src/Images/Product27.png" alt="Product27" />
-        <div className='absolute right-5 top-5'>Cart</div>
-        <div  className='flex justify-between '>
-                <div>
-                    <h2>Description</h2>
-                    <h2>Price</h2>
-                    <h3>Rating</h3>
-                </div>
-                <div>
-                    <h2>Description</h2>
-                    <h2>Price</h2>
-                    <h3>Rating</h3>
-                </div>
-        </div>
-        </div>
-        </div>
+        <div className="container">
+            <div className=' mb-8.5'>
+                <CommonHead content1={"Recommendations. "} content2={"Best matching products for you"} />
+            </div>
+            <div className="RecommendSlider mb-20">
+                <Slider {...settings}>
+                        <div>
+                            <RecommedationItem  content1={"/src/Images/Product27.png"}/>
+                        </div>
+                        <div>
+                            <RecommedationItem/>
+                        </div>
+                        <div>
+                            <RecommedationItem/>
+                        </div>
+                        <div>
+                            <RecommedationItem/>
+                        </div>
+                        <div>
+                            <RecommedationItem/>
+                        </div>
+                        
+                </Slider>
 
+            </div>
         </div>
     </>
   )
