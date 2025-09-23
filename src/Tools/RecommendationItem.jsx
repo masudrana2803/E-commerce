@@ -3,12 +3,12 @@ import { BiShoppingBag } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
 
 
-const RecommedationItem = ({content1,content2,content3,content4,content5,content6,content7,content8}) => {
+const RecommendationItem = ({content1,content2,content3,content4,content5,content6,content7,content8}) => {
   return (
     <>
-            <div className='RecommendationCards w-[309px] h-[448px] content-center relative'>
+            <div className='RecommendationCards w-[280px] h-[448px] content-center relative bg-red-200'>
             <div>
-                <img src={content1} alt="Product27" className=' rounded-2xl '/>
+                <img src={content1} alt="Product27" className=' rounded-2xl h-[329px] bg-blue-200 '/>
             </div>
             <div className='absolute right-5 top-5'>
                 <BiShoppingBag className='hover:bg-black rounded-2xl hover:text-white active:scale-2 text-3xl p-2 '/>
@@ -33,4 +33,4 @@ const RecommedationItem = ({content1,content2,content3,content4,content5,content
   )
 }
 
-export default RecommedationItem
+export default RecommendationItem
