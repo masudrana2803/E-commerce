@@ -4,6 +4,7 @@ import BrandInfo from '../Components/BrandInfo'
 import Collections from '../Components/Collections'
 import Recommendation from '../Components/Recommendation'
 import BannerContainer from '../Components/BannerContainer'
+import Footer from '../Components/Footer'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
     <Collections/>
     <Recommendation/>
     <BannerContainer/>
+    <Footer/>
     </>
   )
 }
