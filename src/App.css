@@ -1,83 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-
-
-
-/* banner Slider */
-.banner_slider{
-    position: relative;
+/* General Dot Styling */
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 6px;
+  margin-top: 10px;
 }
 
-.banner_slider .slick-dots{
-    display: flex !important;
-    color: red;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    bottom: 5px;
-    gap: 5px;
-
+.slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: transparent;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.banner_slider .slick-dots li button{
-    font-size: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 1px solid black;
-
-
+.slick-dots li.slick-active button {
+  background-color: black;
+  transform: scale(1.2);
 }
 
-
-/* when active, make the dot larger and red */
-.banner_slider .slick-dots li.slick-active button{
-background-color: black;
+/* Banner Slider */
+.banner_slider {
+  position: relative;
 }
 
-/* collection-slide */
-.collection_slider .slick-dots{
-    display: flex !important;
-    color: red;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    bottom: -25px;
-    gap: 5px;
+.banner_slider .slick-dots {
+  bottom: 5px;
 }
 
-.collection_slider .slick-dots li button{
-    font-size: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 1px solid black;
-}
-.collection_slider .slick-dots li.slick-active button{
-background-color: black;
-}
-/* RecommendSlider */
-.RecommendSlider .slick-dots{
-    display: flex !important;
-    color: red;
-    justify-content: center;
-    align-items: center;
-    left: 50%;
-    bottom: -25px;
-    gap: 5px;
-    margin-top: 20px;
+/* Collection Slider */
+.collection_slider .slick-dots {
+  bottom: -25px;
 }
 
-.RecommendSlider .slick-dots li button{
-    font-size: 0;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 1px solid black;
-}
-.RecommendSlider .slick-dots li.slick-active button{
-background-color: black;
+/* Recommendation Slider */
+.RecommendSlider .slick-dots {
+  bottom: -25px;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .slick-dots {
+    gap: 4px;
+  }
 
+  .slick-dots li button {
+    width: 12px;
+    height: 12px;
+  }
+
+  .collection_slider .slick-dots,
+  .RecommendSlider .slick-dots {
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slick-dots li button {
+    width: 14px;
+    height: 14px;
+  }
+}

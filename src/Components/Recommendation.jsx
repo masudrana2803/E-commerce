@@ -39,7 +39,7 @@ const Recommendation = () => {
         },
       },
       {
-        breakpoint: 480, // mobile portrait
+        breakpoint: 432, // mobile portrait
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
