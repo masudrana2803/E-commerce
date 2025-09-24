@@ -1,5 +1,3 @@
-// 
-
 import React, { useEffect, useState } from 'react';
 import CommonHead from '../Tools/CommonHead';
 import Slider from 'react-slick';
@@ -39,7 +37,7 @@ const Recommendation = () => {
         },
       },
       {
-        breakpoint: 432, // mobile portrait
+        breakpoint: 640, // small devices
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -50,7 +48,7 @@ const Recommendation = () => {
 
   return (
     <section id="Recommendations" className="py-16 bg-white">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+      <div className="max-w-screen-xl mx-auto px-4">
         <div className="mb-8">
           <CommonHead
             content1="Recommendations."
@@ -59,7 +57,7 @@ const Recommendation = () => {
         </div>
 
         <Slider {...settings} className="RecommendSlider">
-          {Allproducts.map((item) => (
+          {Allproducts.slice(0, 5).map((item) => (
             <RecommendationItem
               key={item.id}
               productImage={item.thumbnail}

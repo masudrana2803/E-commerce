@@ -24,7 +24,7 @@ function Collections() {
         </div>
       <Slider {...settings}>
         <div>
-          <CollectionCard content1={"For Men's and"} content2={"Starting at $24"}/>
+          <CollectionCard content1={"For Men's"} content2={"Starting at $24"}/>
         </div>
         <div>
           <CollectionCard content1={"For Women's"} content2={"Starting at $19"}/>
