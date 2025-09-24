@@ -62,10 +62,11 @@ background-color: black;
     display: flex !important;
     color: red;
     justify-content: center;
-    position: absolute;
+    align-items: center;
     left: 50%;
     bottom: -25px;
     gap: 5px;
+    margin-top: 20px;
 }
 
 .RecommendSlider .slick-dots li button{

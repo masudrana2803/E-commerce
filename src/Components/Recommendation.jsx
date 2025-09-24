@@ -40,6 +40,7 @@ const Recommendation = () => {
 
   return (
     <>
+    <section id='Recommendations' className='mb-25 py-22'>
         <div className="container">
             <div className=' mb-8.5'>
                 <CommonHead content1={"Recommendations. "} content2={"Best matching products for you"} />
@@ -60,6 +61,8 @@ const Recommendation = () => {
 
               </Slider>
         </div>
+
+    </section>
     </>
   )
 }
