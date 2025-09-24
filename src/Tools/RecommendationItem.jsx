@@ -10,8 +10,8 @@ const RecommendationItem = ({productImage,Description,Category,Rating,Review,Dis
             <div>
                 <img src={productImage} alt="Product27" className=' rounded-2xl w-[309px] h-[347pxpx] bg-[#F8FAFC] '/>
             </div>
-            <div className='absolute right-5 top-5'>
-                <BiShoppingBag className='hover:bg-black rounded-2xl hover:text-white active:scale-2 text-3xl p-2 '/>
+            <div className='absolute right-1 top-1'>
+                <BiShoppingBag className='hover:bg-black rounded-2xl bg-white hover:text-white active:scale-2 text-3xl p-2 '/>
             </div>
             <div  className='flex justify-between mt-2'>
                     <div>
