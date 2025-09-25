@@ -5,6 +5,7 @@ import Collections from '../Components/Collections'
 import Recommendation from '../Components/Recommendation'
 import BannerContainer from '../Components/BannerContainer'
 import Footer from '../Components/Footer'
+import FooterEnd from '../Components/FooterEnd'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
     <Recommendation/>
     <BannerContainer/>
     <Footer/>
+    <FooterEnd/>
     </>
   )
 }
