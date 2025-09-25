@@ -66,6 +66,7 @@
 // }
 
 // export default Footer
+
 import React from 'react';
 import logo from "../Images/Nexton_Logo.png";
 import { FaFacebook, FaYoutube, FaTelegram } from "react-icons/fa";

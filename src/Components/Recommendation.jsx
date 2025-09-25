@@ -57,7 +57,7 @@ const Recommendation = () => {
         </div>
 
         <Slider {...settings} className="RecommendSlider">
-          {Allproducts.slice(0, 5).map((item) => (
+          {Allproducts.slice(0,29).map((item) => (
             <RecommendationItem
               key={item.id}
               productImage={item.thumbnail}
