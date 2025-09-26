@@ -19,7 +19,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className='w-[340px] h-[550px] bg-blue-50 absolute top-15 right-0 mr-[20px] z-50 rounded-2xl'>
+      <div className='w-[340px] h-[550px] bg-blue-50 fixed top-15 right-0 mr-[20px] z-50 rounded-2xl'>
 <h2 className='text-center font-bold'>Cart</h2>
 {/* Products and prices */}
 <div className='bg-none py-2 h-[450px] overflow-y-scroll p-4'>
