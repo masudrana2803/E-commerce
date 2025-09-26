@@ -49,14 +49,14 @@ const RecommendationItem = ({
   Price
 }) => {
   return (
-    <div className="RecommendationCards relative bg-white rounded-xl shadow-md p-4 m-2 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[280px]">
+    <div className="RecommendationCards relative bg-white rounded-xl shadow-md p-4 m-2 ">
       
       {/* Product Image */}
       <div className="relative">
         <img
           src={productImage}
           alt="Product"
-          className="rounded-2xl w-full h-[240px] object-cover bg-[#F8FAFC]"
+          className="rounded-2xl w-[340px] h-[240px] object-fill bg-[#F8FAFC]"
         />
         <div className="absolute right-2 top-2">
           <BiShoppingBag className="hover:bg-black rounded-full bg-white hover:text-white text-2xl p-2 transition duration-300 active:scale-1 active:bg-amber-500" />
