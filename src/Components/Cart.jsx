@@ -1,9 +1,24 @@
-import React from 'react'
+
+import React, { useEffect, useState } from 'react';
 import Productitems from '../Tools/Productitems'
 import { Link } from 'react-router'
+import axios from 'axios';
 
 
 const Cart = () => {
+    const [Allproducts, setAllproducts] = useState([]);
+  
+    useEffect(() => {
+      axios
+        .get('https://dummyjson.com/products')
+        .then((res) => setAllproducts(res.data.products))
+        .catch((err) => console.log(err));
+        
+
+
+    }, []);
+
+
   return (
     <>
       <div className='w-[340px] h-[550px] bg-amber-100 absolute top-15 right-0 mr-[20px] z-50'>
@@ -20,6 +35,16 @@ const Cart = () => {
         <p className='font-poppins text-[12px] font-normal'>Price</p>
         </div>
         </div> */}
+                  {Allproducts.slice(0,3).map((item) => (
+            <Productitems
+              key={item.id}
+              content1={item.thumbnail}
+              content2={item.description}
+              Content3={item.price}
+
+            />
+          ))}
+{/* <Productitems content1={""} content2={"Description"} content3={"Price"}/>
 <Productitems content1={""} content2={"Description"} content3={"Price"}/>
 <Productitems content1={""} content2={"Description"} content3={"Price"}/>
 <Productitems content1={""} content2={"Description"} content3={"Price"}/>
@@ -27,9 +52,7 @@ const Cart = () => {
 <Productitems content1={""} content2={"Description"} content3={"Price"}/>
 <Productitems content1={""} content2={"Description"} content3={"Price"}/>
 <Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
+<Productitems content1={""} content2={"Description"} content3={"Price"}/> */}
 
 
 
