@@ -5,6 +5,8 @@ import RecommendationItem from '../Tools/RecommendationItem';
 import axios from 'axios';
 
 const Recommendation = () => {
+
+
   const [Allproducts, setAllproducts] = useState([]);
 
   useEffect(() => {
@@ -13,6 +15,7 @@ const Recommendation = () => {
       .then((res) => setAllproducts(res.data.products))
       .catch((err) => console.log(err));
   }, []);
+          // console.log(Allproducts)
 
   const settings = {
     arrows: false,
@@ -58,7 +61,6 @@ const Recommendation = () => {
 
         <Slider {...settings} className="RecommendSlider">
           {Allproducts.slice(0,29).map((item) => (
-
             <RecommendationItem
               key={item.id}
               productImage={item.thumbnail}

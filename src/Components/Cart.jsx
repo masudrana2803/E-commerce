@@ -1,11 +1,11 @@
-
 import React, { useEffect, useState } from 'react';
 import Productitems from '../Tools/Productitems'
 import { Link } from 'react-router'
-import axios from 'axios';
-
+import axios from 'axios'
 
 const Cart = () => {
+  
+  
     const [Allproducts, setAllproducts] = useState([]);
   
     useEffect(() => {
@@ -13,15 +13,13 @@ const Cart = () => {
         .get('https://dummyjson.com/products')
         .then((res) => setAllproducts(res.data.products))
         .catch((err) => console.log(err));
-        
-
-
     }, []);
+            console.log(Allproducts)
 
 
   return (
     <>
-      <div className='w-[340px] h-[550px] bg-amber-100 absolute top-15 right-0 mr-[20px] z-50'>
+      <div className='w-[340px] h-[550px] bg-blue-50 absolute top-15 right-0 mr-[20px] z-50 rounded-2xl'>
 <h2 className='text-center font-bold'>Cart</h2>
 {/* Products and prices */}
 <div className='bg-none py-2 h-[450px] overflow-y-scroll p-4'>
@@ -35,24 +33,16 @@ const Cart = () => {
         <p className='font-poppins text-[12px] font-normal'>Price</p>
         </div>
         </div> */}
-                  {Allproducts.slice(0,3).map((item) => (
+        {Allproducts.slice(0,4).map((item) => (
             <Productitems
               key={item.id}
               content1={item.thumbnail}
               content2={item.description}
-              Content3={item.price}
-
+              content3={item.price}
             />
           ))}
-{/* <Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/>
-<Productitems content1={""} content2={"Description"} content3={"Price"}/> */}
+
+
 
 
 
