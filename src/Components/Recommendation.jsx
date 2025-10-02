@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CommonHead from '../Tools/CommonHead';
 import Slider from 'react-slick';
+
 import RecommendationItem from '../Tools/RecommendationItem';
 import axios from 'axios';
 
@@ -26,26 +27,29 @@ const Recommendation = () => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // tablets
+        breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-        },
+          infinite: true,
+          dots: true
+        }
       },
       {
-        breakpoint: 768, // mobile landscape
+        breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-        },
+          initialSlide: 2
+        }
       },
       {
-        breakpoint: 640, // small devices
+        breakpoint: 480,
         settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-        },
-      },
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
     ],
   };
 

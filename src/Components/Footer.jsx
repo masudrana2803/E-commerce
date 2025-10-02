@@ -74,7 +74,7 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="bg-white w-full border-y-red-500 border-solid border-2">
+    <div className="bg-white w-full border-[#E5E7EB] border-solid border-1">
       <div className="max-w-screen-xl mx-auto py-10 px-4 md:px-10">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           
