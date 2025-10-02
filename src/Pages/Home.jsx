@@ -7,6 +7,7 @@ import BannerContainer from '../Components/BannerContainer'
 import Footer from '../Components/Footer'
 import FooterEnd from '../Components/FooterEnd'
 
+
 const Home = () => {
   return (
     <>

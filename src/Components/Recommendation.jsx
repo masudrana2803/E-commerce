@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import CommonHead from '../Tools/CommonHead';
 import Slider from 'react-slick';
-
 import RecommendationItem from '../Tools/RecommendationItem';
 import axios from 'axios';
 
 const Recommendation = () => {
-
-
   const [Allproducts, setAllproducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get('https://dummyjson.com/products')
-      .then((res) => setAllproducts(res.data.products))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setAllproducts(res.data.products);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   }, []);
-          // console.log(Allproducts)
 
   const settings = {
     arrows: false,
@@ -32,30 +35,30 @@ const Recommendation = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
+          slidesToScroll: 1,
+        },
+      },
     ],
   };
 
   return (
-    <section id="Recommendations" className="py-16 bg-white">
-      <div className="max-w-screen-xl mx-auto px-4">
+    <section id="Recommendations" className="py-10 sm:py-12 md:py-16 bg-white">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <CommonHead
             content1="Recommendations."
@@ -63,20 +66,24 @@ const Recommendation = () => {
           />
         </div>
 
-        <Slider {...settings} className="RecommendSlider">
-          {Allproducts.slice(0,29).map((item) => (
-            <RecommendationItem
-              key={item.id}
-              productImage={item.thumbnail}
-              Description={item.description}
-              Category={item.category}
-              Rating={item.rating}
-              Review={item.stock}
-              DiscountPrice=""
-              Price={item.price}
-            />
-          ))}
-        </Slider>
+        {loading ? (
+          <div className="text-center py-8 text-gray-500">Loading recommendations...</div>
+        ) : (
+          <Slider {...settings} className="RecommendSlider px-2 sm:px-4">
+            {Allproducts.slice(0, 29).map((item) => (
+              <RecommendationItem
+                key={item.id}
+                productImage={item.thumbnail}
+                Description={item.description}
+                Category={item.category}
+                Rating={item.rating}
+                Review={item.stock}
+                DiscountPrice=""
+                Price={item.price}
+              />
+            ))}
+          </Slider>
+        )}
       </div>
     </section>
   );

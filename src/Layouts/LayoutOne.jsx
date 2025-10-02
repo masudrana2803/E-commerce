@@ -8,10 +8,10 @@ import ResponsiveNavBar from '../Components/ResponsiveNavBar'
 const LayoutOne = () => {
   return (
     <>
-<Navbar/>
-<ResponsiveNavBar/>
-<Home/>
-  <Outlet/>
+    <Navbar/>
+    <ResponsiveNavBar/>
+    <Home/>
+    <Outlet/>
     </>
   )
 }

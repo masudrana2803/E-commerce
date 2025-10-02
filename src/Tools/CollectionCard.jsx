@@ -27,7 +27,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const CollectionCard = ({ content1, content2 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-28 p-4 md:p-6 border-[#E5E7EB] border-2 rounded-2xl bg-white w-full max-w-xl mx-auto mb-4">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-28 p-4 md:p-6 border-[#E5E7EB] border rounded-2xl bg-white w-full max-w-xl mx-auto mb-4">
       
       {/* Text Section */}
       <div className="text-center md:text-left">
