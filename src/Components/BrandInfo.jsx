@@ -41,7 +41,7 @@ const BrandInfo = () => {
   return (
     <section className="py-10 px-4 md:px-8 lg:px-30">
       <div className="max-w-screen-xl mx-auto">
-        <div className="flex flex-col sm:flex sm:flex-row  gap-4 sm:gap-6 md:gap-8 border border-red-50 rounded-2xl p-4 md:p-6 bg-white">
+        <div className="flex flex-col sm:flex sm:flex-row  gap-4 sm:gap-6 md:gap-8 border border-brdrclr rounded-2xl p-4 md:p-6 bg-white">
           <Brandtool
             content1={S1}
             content2="Free Shipping"

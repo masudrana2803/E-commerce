@@ -9,16 +9,27 @@ import ProductDetails from './Pages/ProductDetails'
 
 
 
+// import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+
 
 const App = () => {
+  
   const myRoute = createBrowserRouter(createRoutesFromElements(
-    <Route path='/' element = {<LayoutOne/>}>
-    <Route path='/Checkout' element={<Checkout/>}/>
-    <Route path='/prdc' element={<ProductDetails/>}/>
+  <Route path='/' element={<LayoutOne />}>
+    <Route index element={<Home />} />
+    <Route path='Checkout' element={<Checkout />} />
+    <Route path='Product-details' element={<ProductDetails />} />
+  </Route>
+))
+
+  // const myRoute = createBrowserRouter(createRoutesFromElements(
+  //   <Route path='/' element = {<LayoutOne/>}>
+  //   <Route path='/Checkout' element={<Checkout/>}/>
+  //   <Route path='/prdc' element={<ProductDetails/>}/>
 
 
-    </Route>
-  ))
+  //   </Route>
+  // ))
   return (
     <>
       <RouterProvider router={myRoute}/> 
