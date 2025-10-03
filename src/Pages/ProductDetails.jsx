@@ -44,7 +44,7 @@ const [singleProduct, setSingleProduct] = useState('');
     .catch((err)=>{console.log(err)})
   },[])
 
-console.log(singleProduct.price)
+console.log(singleProduct)
 
   // https://img.freepik.com/premium-photo/close-up-portrait-blue-eyed-ragdoll-cat_1048944-6023660.jpg
   // https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg?cs=srgb&dl=pexels-peng-louis-587527-1643457.jpg&fm=jpg
@@ -69,7 +69,7 @@ console.log(singleProduct.price)
         }
         </div>
         <div className='w-[740px] h-[400px] bg-brdrclr rounded-2xl'>
-        <img src={images} alt="Images" className='w-full h-full fill ' />
+        <img src={images} alt='null' className='w-full h-full fill ' />
         </div>
 
         <section id='Product_Details' className='bg-blue-100 px-2 rounded-2xl w-full h-full p-5'>
@@ -77,12 +77,11 @@ console.log(singleProduct.price)
             <div className="PriceReview flex justify-between ">
               <div className='flex'>
               <h1 className='text-yellow-200 pt-1'><FaStar/></h1>
-              <h1 className='mr-2'>4.9.</h1>
-              <h1 className='underline'>142 Reviews</h1>
+              <h1 className='mr-2'>{singleProduct.rating}</h1>
+              <h1 className='underline'>{singleProduct.reviews?.length} Reviews</h1>
               </div>
               <div className='price flex flex-col pl-8'>
-                <h1>$169.99</h1>
-                <h1 className='line-through'>$199.99</h1>
+              <h1>$ {(singleProduct.price - singleProduct.price * singleProduct.discountPercentage / 100).toFixed(2)}</h1>                <h1 className='line-through'>$ {singleProduct.price}</h1>
               </div>
             </div>
             <div className="sizes">
