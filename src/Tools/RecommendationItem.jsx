@@ -36,8 +36,12 @@
 // export default RecommendationItem
 
 import React from 'react';
+import { Link } from 'react-router';
 import { BiShoppingBag } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
+import { TbListDetails } from "react-icons/tb";
+
+
 
 const RecommendationItem = ({
   productImage,
@@ -46,7 +50,8 @@ const RecommendationItem = ({
   Rating,
   Review,
   DiscountPrice,
-  Price
+  Price,
+  DetailsClick
 }) => {
   return (
     <div className="RecommendationCards relative bg-white rounded-xl shadow-md p-4 m-2 ">
@@ -58,9 +63,13 @@ const RecommendationItem = ({
           alt="Product"
           className="rounded-2xl w-[340px] h-[240px] object-fill bg-[#F8FAFC]"
         />
-        <div className="absolute right-2 top-2">
-          <BiShoppingBag className="hover:bg-black rounded-full bg-white hover:text-white text-2xl p-2 transition duration-300 active:scale-1 active:bg-amber-500" />
-        </div>
+<div className="absolute right-2 top-2 flex flex-col gap-1">
+        <BiShoppingBag className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[24px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
+        <Link onClick={DetailsClick} to={'/ProductDetails'}>
+        <TbListDetails className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[24px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
+        </Link>
+</div>
+
       </div>
 
       {/* Product Info */}

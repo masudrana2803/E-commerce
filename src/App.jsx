@@ -18,7 +18,7 @@ const App = () => {
   <Route path='/' element={<LayoutOne />}>
     <Route index element={<Home />} />
     <Route path='Checkout' element={<Checkout />} />
-    <Route path='Product-details' element={<ProductDetails />} />
+    <Route path='ProductDetails' element={<ProductDetails />} />
   </Route>
 ))
 
