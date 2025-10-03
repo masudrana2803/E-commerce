@@ -43,7 +43,7 @@ import { TbListDetails } from "react-icons/tb";
 
 
 
-const RecommendationItem = ({
+const BestSellersItem = ({
   productImage,
   Description,
   Category,
@@ -94,4 +94,4 @@ const RecommendationItem = ({
   );
 };
 
-export default RecommendationItem;
+export default BestSellersItem;

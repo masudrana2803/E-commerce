@@ -88,9 +88,11 @@ const Navbar = () => {
         <div className="container">
           <div className='flex justify-between'>
             <div>
-              <a href="./">
+              <Link to={'/'}>
                 <img src={logo} alt="Logo" />
-              </a>
+              </Link>
+              {/* <a href="./">
+              </a> */}
             </div>
 
             <div className='w-100 h-13 bg-[#F8F8F8] flex rounded-[100px] items-center p-2'>

@@ -6,6 +6,7 @@ import Recommendation from '../Components/Recommendation'
 import BannerContainer from '../Components/BannerContainer'
 import Footer from '../Components/Footer'
 import FooterEnd from '../Components/FooterEnd'
+import BestSellers from '../Components/BestSellers'
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
     <BrandInfo/>
     <Collections/>
     <Recommendation/>
+    <BestSellers/>
     <BannerContainer/>
     {/* <Footer/>
     <FooterEnd/> */}

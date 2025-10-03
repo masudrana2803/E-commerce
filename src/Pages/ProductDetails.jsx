@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaStar } from "react-icons/fa";
 import { BiShoppingBag } from "react-icons/bi";
 import { CiCircleMinus,CiCirclePlus } from "react-icons/ci";
 import Recommendation from '../Components/Recommendation';
+import { useParams } from 'react-router';
+import axios from 'axios';
 
 
 
 
 
 const ProductDetails = () => {
+
+
+  // Quantity selector function
+
   const [quantity, setQuantity] = useState(0);
 
   const handleMinus = () => {
@@ -19,8 +25,26 @@ const ProductDetails = () => {
     setQuantity(prev => prev + 1);
   };
 
+
+  const [images, setImages] = useState('');
+const [singleProduct, setSingleProduct] = useState('');
   
-  const [data,setData] = useState('https://img.freepik.com/premium-photo/close-up-portrait-blue-eyed-ragdoll-cat_1048944-6023660.jpg')
+  // const [data,setData] = useState('')
+
+  // const [images,setImages] = useState(singleProduct.images?.[0])
+
+  // const [singleProduct,setSingleProduct] = useState('')
+
+
+  const paramsData = useParams()
+
+  useEffect(()=>{
+    axios.get(`https://dummyjson.com/products/${paramsData.id}`)
+    .then((res)=>{setSingleProduct(res.data), setImages(res.data.images[0])})
+    .catch((err)=>{console.log(err)})
+  },[])
+
+console.log(singleProduct.price)
 
   // https://img.freepik.com/premium-photo/close-up-portrait-blue-eyed-ragdoll-cat_1048944-6023660.jpg
   // https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg?cs=srgb&dl=pexels-peng-louis-587527-1643457.jpg&fm=jpg
@@ -32,16 +56,23 @@ const ProductDetails = () => {
       <div className="container">
         <div className='flex gap-10 m-5 relative'>
         <div className='flex gap-4 flex-col'>
-        <button onClick={()=>setData('https://img.freepik.com/premium-photo/close-up-portrait-blue-eyed-ragdoll-cat_1048944-6023660.jpg')} className='items-center bg-red-200 rounded-2xl active:scale-95 w-[100px] h-[90px]'><img src='https://img.freepik.com/premium-photo/close-up-portrait-blue-eyed-ragdoll-cat_1048944-6023660.jpg' className='object-fill w-full h-full rounded-2xl' alt="" /></button>
-        <button onClick={()=>setData('https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg?cs=srgb&dl=pexels-peng-louis-587527-1643457.jpg&fm=jpg')} className='items-center bg-red-200 rounded-2xl active:scale-95 w-[100px] h-[90px]'><img src='https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg?cs=srgb&dl=pexels-peng-louis-587527-1643457.jpg&fm=jpg' className='object-fill w-full h-full rounded-2xl' alt="" /></button>
-        <button onClick={()=>setData('https://static.india.com/wp-content/uploads/2025/01/Persian-Cat-3.png?impolicy=Medium_Widthonly&w=400&h=800')} className='items-center bg-red-200 rounded-2xl active:scale-95 w-[90px] h-[90px]'><img src='https://static.india.com/wp-content/uploads/2025/01/Persian-Cat-3.png?impolicy=Medium_Widthonly&w=400&h=800' className='object-fill w-full h-full rounded-2xl' alt="" /></button>
-        <button onClick={()=>setData('https://www.clickbd.com/global/classified/item_img/1278023_0_original.jpg')} className='items-center bg-red-200 rounded-2xl active:scale-95 w-[100px] h-[100px]'><img src='https://www.clickbd.com/global/classified/item_img/1278023_0_original.jpg' className='object-fill w-full h-full rounded-2xl' alt="" /></button>
+          {
+          singleProduct.images?.map((item,i)=>         
+            <button
+          key={i}
+          onClick={()=>setImages(item)} 
+          className='items-center bg-brdrclr rounded-2xl active:scale-95 w-[100px] h-[90px]'>
+            <img src={item} className='object-fill w-full h-full rounded-2xl' alt="" />
+            </button>
+          
+          )
+        }
         </div>
-        <div className='-5'>
-        <h1 className=' w-[400px] h-[400px] '><img src={data} alt="" className='w-full h-full object-fill rounded-xl' /></h1>
+        <div className='w-[740px] h-[400px] bg-brdrclr rounded-2xl'>
+        <img src={images} alt="Images" className='w-full h-full fill ' />
         </div>
 
-        <section id='Poduct_Details' className='bg-blue-100 px-2 rounded-2xl w-full h-full p-5'>
+        <section id='Product_Details' className='bg-blue-100 px-2 rounded-2xl w-full h-full p-5'>
           <div className='aboslute right-0 top-0 '>
             <div className="PriceReview flex justify-between ">
               <div className='flex'>

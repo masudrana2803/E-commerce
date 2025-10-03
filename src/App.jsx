@@ -9,6 +9,7 @@ import ProductDetails from './Pages/ProductDetails'
 
 
 
+
 // import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 
 
@@ -18,7 +19,7 @@ const App = () => {
   <Route path='/' element={<LayoutOne />}>
     <Route index element={<Home />} />
     <Route path='Checkout' element={<Checkout />} />
-    <Route path='ProductDetails' element={<ProductDetails />} />
+    <Route path='ProductDetails/:id' element={<ProductDetails />} />
   </Route>
 ))
 
