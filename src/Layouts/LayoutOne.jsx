@@ -22,6 +22,7 @@ const LayoutOne = () => {
   return (
     <div>
       <Navbar/>
+      <ResponsiveNavBar/>
       <Outlet />
       <Footer/>
       <FooterEnd/>

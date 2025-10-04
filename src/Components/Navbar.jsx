@@ -84,7 +84,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='py-[27px] hidden md:block '>
+      <nav className='py-[27px] hidden md:block'>
         <div className="container">
           <div className='flex justify-between'>
             <div>
