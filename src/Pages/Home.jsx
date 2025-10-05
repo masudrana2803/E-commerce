@@ -18,8 +18,7 @@ const Home = () => {
     <Recommendation/>
     <BestSellers/>
     <BannerContainer/>
-    {/* <Footer/>
-    <FooterEnd/> */}
+
     </>
   )
 }

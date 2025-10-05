@@ -24,8 +24,8 @@ function Collections() {
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 5,
+          slidesToScroll: 5,
         },
       },
     ],
@@ -49,17 +49,7 @@ function Collections() {
               { content1: "Accessories", content2: "Explore accessories" },
               { content1: "For Men's", content2: "Starting at $24" },
               { content1: "For Women's", content2: "Starting price at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
+
             ].map((item, index) => (
               <div key={index} className="px-2">
                 <CollectionCard
