@@ -71,3 +71,9 @@
     height: 14px;
   }
 }
+
+@media (max-width:480px){
+  .collection_slider{
+    width: 100%;
+  }
+}
