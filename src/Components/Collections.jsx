@@ -1,9 +1,6 @@
 import React from 'react';
 import CommonHead from '../Tools/CommonHead';
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-
-
 import CollectionCard from '../Tools/CollectionCard';
 
 function Collections() {
@@ -29,7 +26,6 @@ function Collections() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 1,
         },
       },
     ],
@@ -37,6 +33,8 @@ function Collections() {
 
   return (
     <>
+    <section id='Collections'>
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <CommonHead
             content1="Start exploring."
@@ -44,27 +42,37 @@ function Collections() {
           />
         </div>
 
-            
-            {/* <div>
-              <CollectionCard content1={"For Men's"} content2={"Starting at $24"}/>
-            </div> */}
-        <div className="collection_slider sm:w-[100%]">
+        <div className="collection_slider">
           <Slider {...settings}>
-            <div className="px-2 w-full">
-              <CollectionCard content1={"For Men's"} content2={"Starting at $24"}/>
-            </div>
-            <div className="px-2 w-full">
-              <CollectionCard content1={"For Men's"} content2={"Starting at $24"}/>
-            </div>
-            <div className="px-2 w-full">
-              <CollectionCard content1={"For Men's"} content2={"Starting at $24"}/>
-            </div>
-            <div className="px-2 w-full">
-              <CollectionCard content1={"For Men's"} content2={"Starting at $24"}/>
-            </div>
-
+            {[
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Women's", content2: "Starting at $19" },
+              { content1: "Accessories", content2: "Explore accessories" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Women's", content2: "Starting price at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" },
+            ].map((item, index) => (
+              <div key={index} className="px-2">
+                <CollectionCard
+                  content1={item.content1}
+                  content2={item.content2}
+                />
+              </div>
+            ))}
           </Slider>
         </div>
+      </div>
+    </section>
     </>
   );
 }

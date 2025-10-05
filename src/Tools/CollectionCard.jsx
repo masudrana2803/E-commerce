@@ -27,11 +27,10 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const CollectionCard = ({ content1, content2 }) => {
   return (
-    <>
-  <div className='bg-yellow-100 w-full max-w-[400px] flex items-center justify-between mr-3 p-4 box-border'>
-
-  {/* Text Section */}
-  <div className="flex-1 min-w-0">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10 p-4 md:p-6 border-[#E5E7EB] border rounded-2xl bg-white w-full max-w-xl mx-auto mb-4">
+      
+      {/* Text Section */}
+      <div className="text-center md:text-left">
         <h2 className="text-[20px] md:text-[24px] font-poppins text-primary font-semibold">
           {content1}
         </h2>
@@ -39,16 +38,13 @@ const CollectionCard = ({ content1, content2 }) => {
           {content2}
         </h2>
       </div>
+
       {/* CTA Section */}
-      <div className="ml-4 flex items-center gap-2 bg-blue-50 px-3 py-2 rounded">
-        <h2 className="text-sm">Shop Now</h2>
-        <IoIosArrowRoundForward />
+      <div className="flex items-center gap-2 md:gap-5 justify-center text-primary cursor-pointer hover:underline">
+        <h2 className="text-[14px] md:text-[16px] font-medium">Shop Now</h2>
+        <IoIosArrowRoundForward className="text-xl md:text-2xl" />
       </div>
-
-      </div>
-
-
-    </>
+    </div>
   );
 };
 
