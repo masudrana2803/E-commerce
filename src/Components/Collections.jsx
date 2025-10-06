@@ -53,14 +53,7 @@ function Collections() {
               { content1: "For Men's", content2: "Starting at $24" },
               { content1: "For Men's", content2: "Starting at $24" },
               { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
-              { content1: "For Men's", content2: "Starting at $24" },
+              { content1: "For Men's", content2: "Starting at $24" }
             ].map((item, index) => (
               <div key={index} className="px-2">
                 <CollectionCard
