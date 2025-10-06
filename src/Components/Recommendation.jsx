@@ -51,7 +51,7 @@ const Recommendation = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },

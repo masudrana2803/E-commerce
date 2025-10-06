@@ -5,6 +5,7 @@ import { CiCircleMinus,CiCirclePlus } from "react-icons/ci";
 import Recommendation from '../Components/Recommendation';
 import { useParams } from 'react-router';
 import axios from 'axios';
+import CommonHead from '../Tools/CommonHead';
 
 
 
@@ -123,11 +124,10 @@ console.log(singleProduct)
           </div>
         </section>
         </div>
-
-
-
       </div>
-      <Recommendation/>
+      <CommonHead content1={"Black Automatic Watch"}/>
+      
+
     </>
   )
 }

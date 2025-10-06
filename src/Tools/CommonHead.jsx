@@ -8,4 +8,15 @@ const CommonHead = ({content1,content2}) => {
   )
 }
 
-export default CommonHead
+const CommonText = ()=>{
+  return(
+    <>
+    
+    
+    
+    
+    </>
+  )
+}
+
+export default {CommonHead,CommonText}
