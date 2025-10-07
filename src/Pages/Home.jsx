@@ -18,7 +18,6 @@ const Home = () => {
     <Recommendation/>
     <BestSellers/>
     <BannerContainer/>
-
     </>
   )
 }
