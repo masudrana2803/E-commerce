@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { FaStar } from "react-icons/fa";
 import { BiShoppingBag } from "react-icons/bi";
 import { CiCircleMinus,CiCirclePlus } from "react-icons/ci";
-import { useParams } from 'react-router';
+import { useParams, useLocation } from 'react-router';
 import axios from 'axios';
 import CommonHead from '../Tools/CommonHead';
 import starsv from '../Images/Star_vector.png'
 import { GiDrippingStar } from "react-icons/gi";
 import RecommendationItem from '../Tools/RecommendationItem';
+import RecommendedProducts from '../Tools/RecommendedProducts';
+import Recommended from '../Tools/Recommended';
 
 
 
@@ -32,7 +34,11 @@ const ProductDetails = () => {
 
 
   const [images, setImages] = useState('');
-const [singleProduct, setSingleProduct] = useState('');
+  const [singleProduct, setSingleProduct] = useState('');
+  const [allProducts, setAllProducts] = useState([]);
+
+  const location = useLocation();
+  const selectedCategory = location?.state?.category || null;
   
   // const [data,setData] = useState('')
 
@@ -47,6 +53,10 @@ const [singleProduct, setSingleProduct] = useState('');
     axios.get(`https://dummyjson.com/products/${paramsData.id}`)
     .then((res)=>{setSingleProduct(res.data), setImages(res.data.images[0])})
     .catch((err)=>{console.log(err)})
+    // also fetch list for recommended component
+    axios.get('https://dummyjson.com/products')
+      .then(res => setAllProducts(res.data.products))
+      .catch(err => console.log(err));
   },[])
 
 console.log(singleProduct)
@@ -67,14 +77,19 @@ console.log(singleProduct)
           key={i}
           onClick={()=>setImages(item)} 
           className='items-center bg-brdrclr rounded-2xl active:scale-95 w-[100px] h-[90px]'>
-            <img src={item} className='object-fill w-full h-full rounded-2xl' alt="" />
+            <img src={item} className='object-fill w-full h-full rounded-2xl' alt="Item" />
             </button>
           
           )
         }
         </div>
         <div className='w-[740px] h-[400px] bg-brdrclr rounded-2xl'>
-        <img src={images} alt='null' className='w-full h-full fill ' />
+          {images && (
+              <img src={images} alt="Product image" className="w-full h-full fill" />
+          )}
+
+
+        {/* <img src={images} alt="Product image" className='w-full h-full fill ' /> */}
         </div>
 
         <section id='Product_Details' className='bg-blue-100 px-2 rounded-2xl w-full h-full p-5'>
@@ -172,7 +187,7 @@ wooden canoes in Valley Park, Missouri ceased in 1978.</p>}/>
 
           <CommonHead content1={"Recommended Products"}/>
             
-          <RecommendationItem/>
+          <Recommended items={allProducts} category={selectedCategory} />
 
       
       </div>

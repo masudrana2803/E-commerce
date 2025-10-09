@@ -59,12 +59,9 @@ const Recommendation = () => {
   };
 
   // -----Product details handler
-  const handleDetails = (ProductDetails)=>{
-    // console.log(ProductDetails)
-    
-    navigate(`/ProductDetails/${ProductDetails}`)
-
-
+  const handleDetails = (productId, category)=>{
+    // navigate to product page and pass selected category in location state
+    navigate(`/product/${productId}`, { state: { category } });
   }
 
 
@@ -92,7 +89,7 @@ const Recommendation = () => {
                 Review={item.stock}
                 DiscountPrice=""
                 Price={item.price}
-                DetailsClick={()=>handleDetails(item.id)}
+                DetailsClick={() => handleDetails(item.id, item.category)}
               />
             ))}
           </Slider>
