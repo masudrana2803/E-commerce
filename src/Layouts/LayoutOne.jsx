@@ -1,33 +1,18 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
+import NavBar from '../components/NavBar'
 import { Outlet } from 'react-router'
-import Home from '../Pages/Home'
-import Collections from '../Components/Collections'
-import ResponsiveNavBar from '../Components/ResponsiveNavBar'
-import Footer from '../Components/Footer'
-import FooterEnd from '../Components/FooterEnd'
+import ResNav from '../components/ResNav'
+import Footer from '../components/Footer'
 
-// const LayoutOne = () => {
-//   return (
-//     <>
-//     <Navbar/>
-//     <ResponsiveNavBar/>
-//     <Home/>
-//     <Outlet/>
-//     </>
-//   )
-// }
-
-const LayoutOne = () => {
+const LayOutOne = () => {
   return (
-    <div>
-      <Navbar/>
-      <ResponsiveNavBar/>
-      <Outlet />
-      <Footer/>
-      <FooterEnd/>
-    </div>
+    <>
+    <NavBar/>
+    <ResNav/>
+    <Outlet/>
+    <Footer/>
+    </>
   )
 }
 
-export default LayoutOne
+export default LayOutOne

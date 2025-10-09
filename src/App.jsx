@@ -1,39 +1,26 @@
 import React from 'react'
 import './App.css'
-import Home from './Pages/Home'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
-import LayoutOne from './Layouts/LayoutOne'
-import Checkout from './Pages/Checkout'
-import ProductDetails from './Pages/ProductDetails'
-
-
-
-
-
-// import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import LayOutOne from './Layouts/LayOutOne'
+import Home from './pages/Home'
+import ChekOut from './pages/ChekOut'
+import ProductDetails from './pages/ProductDetails'
+import LocalStorage from  "./pages/LocalStorage"
 
 
 const App = () => {
-  
-  const myRoute = createBrowserRouter(createRoutesFromElements(
-  <Route path='/' element={<LayoutOne />}>
-    <Route index element={<Home />} />
-    <Route path='Checkout' element={<Checkout />} />
-    <Route path='ProductDetails/:id' element={<ProductDetails />} />
-  </Route>
-))
+  const myRoute =createBrowserRouter(createRoutesFromElements(
+    <Route  path='/' element={<LayOutOne/>}>
+      <Route  index  element={<Home/>}  />
+      <Route path='/checkout' element={<ChekOut/>}/>
+      <Route path='/productdetails/:productId' element={<ProductDetails/>}/>
+      <Route path='/localstorage' element={<LocalStorage/>} />
+    </Route>
 
-  // const myRoute = createBrowserRouter(createRoutesFromElements(
-  //   <Route path='/' element = {<LayoutOne/>}>
-  //   <Route path='/Checkout' element={<Checkout/>}/>
-  //   <Route path='/prdc' element={<ProductDetails/>}/>
-
-
-  //   </Route>
-  // ))
+  ))
   return (
     <>
-      <RouterProvider router={myRoute}/> 
+    <RouterProvider router={myRoute}/>
     </>
   )
 }

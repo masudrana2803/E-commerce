@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import CommonProductCard from "./commoncomponent/CommonProductCard";
 import CommonHead from "./commoncomponent/CommonHead";
-import axios from "axios";
+import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
-import { useNavigate } from "react-router";
+import axios from "axios";
+import CommonProductCard from "./commoncomponent/CommonProductCard";
 
-const Recommendation = () => {
-  const [allProducts, setAllProducts] = useState([]);
+const Sellers = () => {
+  const [allProduct, setallProduct] = useState([]);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/products")
+      .then((res) => setallProduct(res.data.products))
+      .catch((err) => console.log(err));
+  }, []);
 
   const settings = {
     dots: true,
@@ -46,34 +50,18 @@ const Recommendation = () => {
     ],
   };
 
-  useEffect(() => {
-    axios
-      .get("https://dummyjson.com/products")
-      .then((res) => {
-        setAllProducts(res.data.products);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  // product details handler
-
-  const handleDetails = (productId) => {
-    navigate(`/productdetails/${productId}`);
-  };
-
   return (
     <>
-      <section className="mt-[176px]">
-        <div className="container exploring px-6 lg:px-[50px]">
+      <section id="seller" className="mt-[176px] exploring">
+        <div className="container px-6 lg:px-[50px]">
           <CommonHead
-            commonContent1={" Recommendations. "}
-            commonContent2={"Best matching products for you"}
+            commonContent1={"Best Sellers. "}
+            commonContent2={"Best selling of the month"}
           />
+
           <div className="mt-10">
             <Slider {...settings}>
-              {allProducts.map((item) => (
+              {allProduct.map((item) => (
                 <div>
                   <CommonProductCard
                     key={item.id}
@@ -84,7 +72,6 @@ const Recommendation = () => {
                     productDisCountPrice={item.discountPercentage}
                     productRating={item.rating}
                     productStock={item.stock}
-                    detailsClick={()=>handleDetails(item.id)}
                   />
                 </div>
               ))}
@@ -96,4 +83,4 @@ const Recommendation = () => {
   );
 };
 
-export default Recommendation;
+export default Sellers;

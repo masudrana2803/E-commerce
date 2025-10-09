@@ -1,23 +1,22 @@
 import React from 'react'
-import Hero from '../Components/Hero'
-import BrandInfo from '../Components/BrandInfo'
-import Collections from '../Components/Collections'
-import Recommendation from '../Components/Recommendation'
-import BannerContainer from '../Components/BannerContainer'
-import Footer from '../Components/Footer'
-import FooterEnd from '../Components/FooterEnd'
-import BestSellers from '../Components/BestSellers'
+import Banner from '../components/Banner'
+import Services from '../components/Services'
+import Exploring from '../components/Exploring'
+import Recommendation from '../components/Recommendation'
+import Sellers from '../components/Sellers'
+import Original from '../components/Original'
 
 
 const Home = () => {
   return (
     <>
-    <Hero/>
-    <BrandInfo/>
-    <Collections/>
+    <Banner/>
+    <Services/>
+    <Exploring/>
     <Recommendation/>
-    <BestSellers/>
-    <BannerContainer/>
+    <Sellers/>
+    <Original/>
+    
     </>
   )
 }
