@@ -127,8 +127,8 @@ console.log(singleProduct)
             </div>
             <div className="Price_confirmation text-2ndary ">
                 <div className="Prqty flex justify-between">
-                  <h1>$169.99 x 1</h1>
-                  <h1>$169.99</h1>
+                  <h1>{singleProduct.price} x {quantity}</h1>
+                  <h1>{singleProduct.price*quantity}</h1>
                 </div>
                 <div className="flex justify-between">
                   <h1>Tax estimate</h1>
@@ -137,7 +137,7 @@ console.log(singleProduct)
             </div>
             <div className="TotalAmount flex font-bold text-[18px] text-black justify-between">
               <h1>Total</h1>
-              <h1>$169.99</h1>
+              <h1>{singleProduct.price*quantity}</h1>
             </div>
 
           </div>
