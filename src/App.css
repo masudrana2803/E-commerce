@@ -1,81 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* -----banner slider------- */
+/* General Dot Styling */
 
 
-.banner_slider  {
-    position: relative;
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 6px;
+  margin-top: 10px;
 }
 
-.banner_slider  .slick-dots{
-    display: flex !important;
-    gap:12px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 24px;
+.slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: transparent;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
-.banner_slider  .slick-dots li button{
-    font-size: 0;
-    width:10px;
-    height: 10git px;
-    border:1px solid #111827;
-    border-radius: 50%;
+.slick-dots li.slick-active button {
+  background-color: black;
+  transform: scale(1.2);
 }
 
-.banner_slider  .slick-dots .slick-active button{
-   background-color: #111827;
+/* Banner Slider */
+.banner_slider {
+  position: relative;
 }
 
-
-/* ------------exploring 2 design */
-
-
-
-.exploring .slick-dots{
-    display: flex !important;
-    justify-content: center;
-    gap:12px;
- 
+.banner_slider .slick-dots {
+  bottom: 5px;
 }
 
-
-.exploring  .slick-dots li button{
-    font-size: 0;
-    width:10px;
-    height: 10px;
-    background: lab(8.32% 1.95 -10.51 / 0.549);
-    margin-top: 40px;
-    border-radius: 50%;
+/* Collection Slider */
+.collection_slider .slick-dots {
+  bottom: -25px;
 }
 
-.exploring .slick-dots .slick-active button{
-   background-color: #111827;
+/* Recommendation Slider */
+.RecommendSlider .slick-dots {
+  bottom: -25px;
 }
 
-/* ---res nav */
-.navBanner{
-    position: relative;
-}
+/* .collection_slider .slick-slide {
+  width: 300px;
+  background-color: yellowgreen;
+} */
 
-.resBanner  .slick-dots{
-    display: flex !important;
-    gap: 6px;
-    position: absolute;
-    top:350px;
-}
-
-
-.resBanner  .slick-dots li button{
-    font-size: 0;
-    width:8px;
-    height: 8px;
-    border:1px solid #111827;
-    border-radius: 50%;
-}
-
-.resBanner  .slick-dots .slick-active button{
-   background-color: #111827;
+.collection_slider .slick-slide .slick-active .slick-current{
+  background-color: red;
+  color: yellow;
 }

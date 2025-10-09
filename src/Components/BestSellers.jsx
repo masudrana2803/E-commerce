@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import CommonHead from '../Tools/CommonHead';
 import Slider from 'react-slick';
-import RecommendationItem from '../Tools/RecommendationItem';
+import BestSellersItem from '../Tools/BestSellersItem';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
-const Recommendation = () => {
+const BestSellers = () => {
   const [Allproducts, setAllproducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate()
@@ -60,7 +60,7 @@ const Recommendation = () => {
 
   // -----Product details handler
   const handleDetails = (ProductDetails)=>{
-    // console.log(ProductDetails)
+    console.log(ProductDetails)
     
     navigate(`/ProductDetails/${ProductDetails}`)
 
@@ -69,21 +69,21 @@ const Recommendation = () => {
 
 
   return (
-    <section id="Recommendations" className="py-10 sm:py-12 md:py-16 bg-white">
+    <section id="BestSellerss" className="py-10 sm:py-12 md:py-16 bg-white">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <CommonHead
-            content1="Recommendations."
-            content2="Best matching products for you"
+            content1="BestSellerss."
+            content2="Best selling of the month"
           />
         </div>
 
         {loading ? (
-          <div className="text-center py-8 text-gray-500">Loading recommendations...</div>
+          <div className="text-center py-8 text-gray-500">Loading BestSellerss...</div>
         ) : (
           <Slider {...settings} className="RecommendSlider px-2 sm:px-4">
             {Allproducts.slice(0, 8).map((item) => (
-              <RecommendationItem
+              <BestSellersItem
                 key={item.id}
                 productImage={item.thumbnail}
                 Description={item.description}
@@ -102,4 +102,4 @@ const Recommendation = () => {
   );
 };
 
-export default Recommendation;
+export default BestSellers;
