@@ -82,7 +82,7 @@ const Recommendation = () => {
           <div className="text-center py-8 text-gray-500">Loading recommendations...</div>
         ) : (
           <Slider {...settings} className="RecommendSlider px-2 sm:px-4">
-            {Allproducts.slice(0, 8).map((item) => (
+            {Allproducts.slice(0,29).map((item) => (
               <RecommendationItem
                 key={item.id}
                 productImage={item.thumbnail}

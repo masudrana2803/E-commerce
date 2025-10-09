@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
-.container {
+@utility container {
   margin-inline: auto;
   padding-inline: 2rem;
 }
 
-:root {
-    --font-poppins: "Poppins", sans-serif;
-    --color-primary: #111827;
-    --color-2ndary: #4B5563;
-    --color-spandy: #4B5563CC;
-    --color-brdrclr: #E5E7EB;
+@theme{
+    --font-poppins:"Poppins", sans-serif;
+    --color-primary:#111827;
+    --color-2ndary:#4B5563;
+    --color-spandy:#4B5563CC;
+    --color-brdrclr:#E5E7EB;
 }
