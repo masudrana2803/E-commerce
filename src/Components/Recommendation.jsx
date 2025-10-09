@@ -23,7 +23,7 @@ const Recommendation = () => {
         breakpoint: 1023,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -32,7 +32,7 @@ const Recommendation = () => {
         breakpoint: 767,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
