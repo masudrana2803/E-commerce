@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
-import LayOutOne from './Layouts/LayOutOne'
+import LayOutOne from './Layouts/LayoutOne'
 import Home from './pages/Home'
 import ChekOut from './pages/ChekOut'
 import ProductDetails from './pages/ProductDetails'
