@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { FaStar } from "react-icons/fa";
 import { BiShoppingBag } from "react-icons/bi";
 import { CiCircleMinus,CiCirclePlus } from "react-icons/ci";
-import Recommendation from '../Components/Recommendation';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import CommonHead from '../Tools/CommonHead';
+import starsv from '../Images/Star_vector.png'
+import { GiDrippingStar } from "react-icons/gi";
+import RecommendationItem from '../Tools/RecommendationItem';
+
+
 
 
 
@@ -124,10 +128,54 @@ console.log(singleProduct)
           </div>
         </section>
         </div>
-      </div>
+      <div className='mb-15'>
       <CommonHead content1={"Black Automatic Watch"}/>
-      
+      <CommonHead content3={<p>The St. Louis Meramec Canoe Company was founded by Alfred Wickett in 1922. Wickett had
+previously worked for the Old Town Canoe Co from 1900 to 1914. Manufacturing of the classic
+wooden canoes in Valley Park, Missouri ceased in 1978.</p>}/>
+      </div>
+      <div className='mb-15'>
+        <CommonHead content1={"Fabric + Care"}/>
+        <CommonHead content3={"Material: Soft wool blend"}/>
+        <CommonHead content3={"Color: Various"}/>
+      </div>
+        <div className='mb-15'>
+          <CommonHead content1={"Sale performance"}/>
+          <CommonHead content3={"Sales: 0"}/>
+          <CommonHead content3={"Review Count: -"}/>
+          <CommonHead content3={"Review Average: -"}/>
+        </div>
+        <div className='mb-24'>
+        <CommonHead content1={"Keywords"}/>
+        </div>
+        <div className='mb-24 flex gap-5'>
+          <div className='flex gap-2 p-2 border-2 border-brdrclr w-fit rounded-2xl items-center'>
+          <GiDrippingStar/>
+          <p>men's fashion</p>
+          </div>
+          
+          <div className='flex gap-2 p-2 border-2 border-brdrclr w-fit rounded-2xl items-center'>
+            <GiDrippingStar/>
+          <p>winter hat</p>
+          </div>
+          
+          <div className='flex gap-2 p-2 border-2 border-brdrclr w-fit rounded-2xl items-center'>
+            <GiDrippingStar/>
+          <p>colorful accessory</p>
+          </div>
+          
+          <div className='flex gap-2 p-2 border-2 border-brdrclr w-fit rounded-2xl items-center'>
+            <GiDrippingStar/>
+          <p>warm headwear</p>
+          </div>
+        </div>
 
+          <CommonHead content1={"Recommended Products"}/>
+            
+          <RecommendationItem/>
+
+      
+      </div>
     </>
   )
 }

@@ -3,7 +3,7 @@ import CommonHead from '../Tools/CommonHead';
 import Slider from 'react-slick';
 import CollectionCard from '../Tools/CollectionCard';
 
-function Collections() {
+function Collection() {
   const settings = {
     arrows: false,
     dots: true,
@@ -70,4 +70,4 @@ function Collections() {
   );
 }
 
-export default Collections;
+export default Collection;

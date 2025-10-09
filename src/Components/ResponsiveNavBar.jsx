@@ -2,8 +2,8 @@ import React, { useState, useRef,useEffect } from 'react'
 import logo from '../Images/Favicon.png'
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import { IoMenuOutline } from "react-icons/io5";
+import { Link } from 'react-router';
 import Cart from './Cart';
-
 
 
 const ResponsiveNavBar = () => {
@@ -37,7 +37,9 @@ const ResponsiveNavBar = () => {
 
             <div className="container">
             <div className='flex justify-between py-5 md:hidden'>
+              <Link to={'/'}>
                 <img src={logo} alt="logo" className='active:scale-1 duration-500' />
+              </Link>
                 <div className='flex gap-2 items-center'>
                 <button className='active:scale-2'><CiSearch/></button>
                 <form> <input className='inline-block outline-0' type="text" placeholder='Search in products...' /> </form>

@@ -54,14 +54,14 @@ const RecommendationItem = ({
   DetailsClick
 }) => {
   return (
-    <div className="RecommendationCards relative bg-white rounded-xl shadow-md p-4 m-2 ">
+    <div className="RecommendationCards relative rounded-xl shadow-md p-4 m-2 w-fit bg-white">
       
       {/* Product Image */}
       <div className="relative">
         <img
           src={productImage}
           alt="Product"
-          className="rounded-2xl w-[340px] h-[240px] object-fill bg-[#F8FAFC]"
+          className="rounded-2xl w-65 h-[240px] object-fill bg-[#F8FAFC]"
         />
 <div className="absolute right-2 top-2 flex flex-col gap-1">
         <BiShoppingBag className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[24px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
