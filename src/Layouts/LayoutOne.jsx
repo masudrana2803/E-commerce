@@ -2,10 +2,8 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { Outlet } from 'react-router'
 import Home from '../Pages/Home'
-import Collections from '../components/Collection'
-import ResponsiveNavBar from '../components/ResponsiveNavBar'
-import Footer from '../components/Footer'
-import FooterEnd from '../components/FooterEnd'
+
+
 
 // const LayoutOne = () => {
 //   return (
