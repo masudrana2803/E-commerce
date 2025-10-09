@@ -2,7 +2,9 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { Outlet } from 'react-router'
 import Home from '../Pages/Home'
-
+import ResponsiveNavbar from '../components/ResponsiveNavBar'
+import Footer from '../components/Footer'
+import FooterEnd from '../components/FooterEnd'
 
 
 // const LayoutOne = () => {
@@ -20,7 +22,7 @@ const LayoutOne = () => {
   return (
     <div>
       <Navbar/>
-      <ResponsiveNavBar/>
+      <ResponsiveNavbar/>
       <Outlet />
       <Footer/>
       <FooterEnd/>
