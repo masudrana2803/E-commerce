@@ -112,7 +112,7 @@ const Navbar = () => {
                 </button>
               </div>
               <div className='absolute top-[-7px] right-[-7px] h-[24px] w-[24px] bg-[#0EA5E9] rounded-[50%] text-center'>
-                3
+                0
               </div>
             </div>
           </div>
