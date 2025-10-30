@@ -89,7 +89,7 @@ const Recommendation = () => {
                 Review={item.stock}
                 DiscountPrice=""
                 Price={item.price}
-                DetailsClick={() => handleDetails(item.id, item.category)}
+                // DetailsClick={() => handleDetails(item.id, item.category)}
               />
             ))}
           </Slider>

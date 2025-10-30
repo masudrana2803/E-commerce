@@ -56,7 +56,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
-import logo from "../Images/stripe.png"
+import logo from "../Images/Nexton_Logo.png"
 import { Link } from 'react-router';
 import Cart from './Cart';
 

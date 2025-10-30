@@ -65,8 +65,8 @@ const BestSellersItem = ({
         />
 <div className="absolute right-2 top-2 flex flex-col gap-1">
         <BiShoppingBag className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[24px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
-        <button onClick={DetailsClick} to={'/'}>
-        <TbListDetails className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[24px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
+        <button onClick={DetailsClick}>
+          <TbListDetails className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[24px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
         </button>
 </div>
 
@@ -74,7 +74,9 @@ const BestSellersItem = ({
 
       {/* Product Info */}
       <div className="mt-4 flex flex-col gap-1">
-        <h2 className="font-poppins font-semibold text-[16px] truncate">{Description}</h2>
+        <button onClick={DetailsClick} className="text-left font-poppins font-semibold text-[16px] truncate">
+          {Description}
+        </button>
         <h2 className="font-poppins text-[14px] text-gray-500">{Category}</h2>
       </div>
 

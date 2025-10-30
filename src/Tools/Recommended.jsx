@@ -19,7 +19,11 @@ const Recommended = ({ items = [], category }) => {
             alt={p.title || p.name}
             className="w-full h-40 object-cover rounded-md"
           />
-          <h3 className="mt-2 text-lg font-semibold">{p.title || p.name}</h3>
+          <h3 className="mt-2 text-lg font-semibold">
+            <Link to={`/product/${p.id}`} className="hover:underline">
+              {p.title || p.name}
+            </Link>
+          </h3>
           <p className="text-gray-500 text-sm">${p.price}</p>
           <div className="flex items-center gap-1 text-yellow-500">
             <FaStar /> <span className="text-sm">{p.rating}</span>
