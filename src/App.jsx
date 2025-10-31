@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import Home from './Pages/Home'
+import Home from './pages/Home'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
 import LayoutOne from './Layouts/LayoutOne'
-import Checkout from './Pages/Checkout'
-import ProductDetails from './Pages/ProductDetails'
+import Checkout from './pages/Checkout'
+import ProductDetails from './pages/ProductDetails'
 
 
 // soefoefn

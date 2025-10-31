@@ -1,7 +1,7 @@
 import React from 'react';
-import CommonHead from '../Tools/CommonHead';
+import CommonHead from '../tools/CommonHead';
 import Slider from 'react-slick';
-import CollectionCard from '../Tools/CollectionCard';
+import CollectionCard from '../tools/CollectionCard';
 
 function Collection() {
   const settings = {

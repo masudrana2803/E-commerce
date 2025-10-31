@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import CommonHead from '../Tools/CommonHead';
+import CommonHead from '../tools/CommonHead';
 import Slider from 'react-slick';
-import RecommendationItem from '../Tools/RecommendationItem';
+import RecommendationItem from '../tools/RecommendationItem';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 
@@ -82,6 +82,7 @@ const Recommendation = () => {
             {Allproducts.slice(0,29).map((item) => (
               <RecommendationItem
                 key={item.id}
+                product={item}
                 productImage={item.thumbnail}
                 Description={item.description}
                 Category={item.category}
@@ -89,7 +90,7 @@ const Recommendation = () => {
                 Review={item.stock}
                 DiscountPrice=""
                 Price={item.price}
-                // DetailsClick={() => handleDetails(item.id, item.category)}
+                DetailsClick={() => handleDetails(item.id, item.category)}
               />
             ))}
           </Slider>

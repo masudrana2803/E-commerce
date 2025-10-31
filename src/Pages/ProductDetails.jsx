@@ -3,13 +3,14 @@ import { FaStar } from "react-icons/fa";
 import { BiShoppingBag } from "react-icons/bi";
 import { CiCircleMinus,CiCirclePlus } from "react-icons/ci";
 import { useParams, useLocation } from 'react-router';
+import { addToCart } from '../Tools/cartUtils';
 import axios from 'axios';
-import CommonHead from '../Tools/CommonHead';
+import CommonHead from '../tools/CommonHead';
 import starsv from '../Images/Star_vector.png'
 import { GiDrippingStar } from "react-icons/gi";
-import RecommendationItem from '../Tools/RecommendationItem';
-import RecommendedProducts from '../Tools/RecommendedProducts';
-import Recommended from '../Tools/Recommended';
+import RecommendationItem from '../tools/RecommendationItem';
+import RecommendedProducts from '../tools/RecommendedProducts';
+import Recommended from '../tools/Recommended';
 
 
 
@@ -121,8 +122,8 @@ console.log(singleProduct)
                 <button onClick={handleAdd}><CiCirclePlus/></button>
               </div>
               <div className='cart bg-black text-white rounded-2xl flex gap-2 items-center px-4 py-2 hover:bg-white hover:text-black '>
-                <BiShoppingBag/>
-                <button>Add to Cart</button>
+                <BiShoppingBag />
+                <button onClick={() => { addToCart({ id: singleProduct.id, title: singleProduct.title || singleProduct.name, price: singleProduct.price, thumbnail: images }, 1); alert('Added to cart'); }}>Add to Cart</button>
               </div>
             </div>
             <div className="Price_confirmation text-2ndary ">

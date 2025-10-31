@@ -31,7 +31,7 @@
 
 
 import React from 'react';
-import Brandtool from '../Tools/Brandtool';
+import Brandtool from '../tools/Brandtool';
 import S1 from '../Images/serviceImage1.png';
 import S2 from '../Images/serviceImage2.png';
 import S3 from '../Images/serviceImage3.png';

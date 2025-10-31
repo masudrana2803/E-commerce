@@ -44,6 +44,7 @@ import { TbListDetails } from "react-icons/tb";
 
 
 const RecommendationItem = ({
+  product,
   productImage,
   Description,
   Category,
@@ -64,7 +65,18 @@ const RecommendationItem = ({
           className="rounded-2xl w-[340px] h-[240px] object-fill bg-[#F8FAFC]"
         />
 <div className="absolute right-0 top-0 flex flex-col gap-1">
-        <BiShoppingBag className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[32px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
+        <BiShoppingBag
+          onClick={() => {
+            const p = product || { id: null, title: Description, price: Price, thumbnail: productImage };
+            if (!p.id) {
+              alert('Cannot add this item to cart (missing id)');
+              return;
+            }
+            addToCart({ id: p.id, title: p.title || p.name || Description, price: p.price || Price, thumbnail: p.thumbnail || productImage }, 1);
+            alert('Added to cart');
+          }}
+          className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[32px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500"
+        />
         <button onClick={DetailsClick}>
           <TbListDetails className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[32px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
         </button>
@@ -74,8 +86,8 @@ const RecommendationItem = ({
 
       {/* Product Info */}
       <div className="mt-4 flex flex-col gap-1">
-        <button onClick={DetailsClick} className="text-left font-poppins font-semibold text-[16px] truncate">
-          {Description}
+        <button onClick={DetailsClick} className="text-left font-poppins font-semibold text-[16px] truncate  hover:underline ">
+          {product?.title || product?.name || Description}
         </button>
         <h2 className="font-poppins text-[14px] text-gray-500">{Category}</h2>
       </div>

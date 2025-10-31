@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { BiShoppingBag } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
 import { TbListDetails } from "react-icons/tb";
+import { addToCart } from './cartUtils';
 
 const RecommendedProducts = ({
   productImage,
@@ -25,7 +26,18 @@ const RecommendedProducts = ({
           className="rounded-2xl w-65 h-[240px] object-fill bg-[#F8FAFC]"
         />
 <div className="absolute right-2 top-2 flex flex-col gap-1">
-        <BiShoppingBag className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[32px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
+        <BiShoppingBag
+          onClick={() => {
+            const p = { id: null, title: Description, price: DiscountPrice || Price, thumbnail: productImage };
+            if (!p.id) {
+              alert('Cannot add this item to cart (missing id)');
+              return;
+            }
+            addToCart({ id: p.id, title: p.title, price: p.price, thumbnail: p.thumbnail }, 1);
+            alert('Added to cart');
+          }}
+          className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[24px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500"
+        />
         <button onClick={DetailsClick}>
           <TbListDetails className="bg-white/30 backdrop-blur-md border border-white/40 rounded-full text-[32px] p-2 hover:bg-black hover:text-white transition duration-300 active:scale-95 active:bg-amber-500" />
         </button>
