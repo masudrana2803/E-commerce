@@ -5,6 +5,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import LayoutOne from './Layouts/LayoutOne'
 import Checkout from './pages/Checkout'
 import ProductDetails from './pages/ProductDetails'
+import AllProducts from './pages/AllProducts'
 
 
 // soefoefn
@@ -21,6 +22,8 @@ const App = () => {
     <Route path='Checkout' element={<Checkout />} />
     <Route path='ProductDetails/:id' element={<ProductDetails />} />
     <Route path="/product/:id" element={<ProductDetails />} />
+    <Route path='/AllProducts' element={<AllProducts/>} />
+
   </Route>
 ))
 

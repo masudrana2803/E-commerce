@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { BiShoppingBag } from "react-icons/bi";
 import { CiCircleMinus,CiCirclePlus } from "react-icons/ci";
 import { useParams, useLocation } from 'react-router';
-import { addToCart } from '../Tools/cartUtils';
+import { addToCart } from '../tools/cartUtils';
 import axios from 'axios';
 import CommonHead from '../tools/CommonHead';
 import starsv from '../Images/Star_vector.png'

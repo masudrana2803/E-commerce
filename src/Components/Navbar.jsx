@@ -54,75 +54,29 @@
 // export default Navbar
 
 
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import logo from "../Images/Nexton_Logo.png"
-import { Link, useNavigate } from 'react-router';
+import { Link } from 'react-router';
 import Cart from './Cart';
-import axios from 'axios';
+import SearchResults from '../Tools/SearchResults';
 
 
 const Navbar = () => {
   const [showCart, setShowCart] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [showResults, setShowResults] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [showResults, setShowResults] = useState(true);
   const cartRef = useRef(null);
   const searchRef = useRef(null);
-  const navigate = useNavigate();
-  const searchTimeout = useRef(null);
 
-  // Debounced search function
-  const debouncedSearch = useCallback(async (query) => {
-    if (!query.trim()) {
-      setSearchResults([]);
-      setShowResults(false);
-      return;
-    }
-
-    setIsLoading(true);
-    try {
-      const response = await axios.get(`https://dummyjson.com/products/search?q=${query}`);
-      setSearchResults(response.data.products);
-      setShowResults(true);
-    } catch (error) {
-      console.error('Search failed:', error);
-      setSearchResults([]);
-    }
-    setIsLoading(false);
-  }, []);
-
-  // Handle input change with debounce
   const handleSearchChange = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-    
-    // Clear previous timeout
-    if (searchTimeout.current) {
-      clearTimeout(searchTimeout.current);
-    }
-
-    // Set new timeout for search
-    searchTimeout.current = setTimeout(() => {
-      debouncedSearch(query);
-    }, 300); // Wait 300ms after typing stops
+    setSearchQuery(e.target.value);
   };
 
-  const handleProductClick = (id) => {
+  const handleCloseResults = () => {
     setShowResults(false);
     setSearchQuery('');
-    navigate(`/product/${id}`);
   };
-
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (searchTimeout.current) {
-        clearTimeout(searchTimeout.current);
-      }
-    };
-  }, []);
 
   // Close results when clicking outside
   useEffect(() => {
@@ -168,44 +122,24 @@ const Navbar = () => {
             <div ref={searchRef} className='relative w-100'>
               <div className='h-13 bg-[#F8F8F8] flex rounded-[100px] items-center p-2'>
                 <div className='mr-2'>
-                  <CiSearch className={`text-xl ${isLoading ? 'animate-spin text-blue-500' : ''}`} />
+                  <CiSearch className="text-xl" />
                 </div>
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={handleSearchChange}
+                  onFocus={() => setShowResults(true)}
                   placeholder='Search in Products'
                   className='text-center w-full font-normal font-poppins text-[14px] border-none outline-none bg-transparent'
                 />
               </div>
 
-              {/* Search Results Dropdown */}
-              {showResults && searchResults.length > 0 && (
-                <div className='absolute w-full mt-2 bg-white rounded-lg shadow-lg z-50 max-h-[400px] overflow-y-auto'>
-                  {searchResults.map((product) => (
-                    <div
-                      key={product.id}
-                      onClick={() => handleProductClick(product.id)}
-                      className='flex items-center gap-3 p-3 hover:bg-gray-100 cursor-pointer border-b'
-                    >
-                      <img 
-                        src={product.thumbnail} 
-                        alt={product.title}
-                        className='w-12 h-12 object-cover rounded'
-                      />
-                      <div>
-                        <h3 className='font-medium text-sm'>{product.title}</h3>
-                        <p className='text-sm text-gray-600'>₹{product.price}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-              
-              {showResults && searchResults.length === 0 && (
-                <div className='absolute w-full mt-2 bg-white rounded-lg shadow-lg z-50 p-4 text-center text-gray-500'>
-                  No products found
-                </div>
+              {/* Search Results Component */}
+              {showResults && (
+                <SearchResults
+                  query={searchQuery}
+                  onProductClick={handleCloseResults}
+                />
               )}
             </div>
 
